@@ -1,0 +1,42 @@
+Steps for Creating Tailwind css Project
+
+1.  npm init -y     =>    for create package.json file, where all npm file will save
+
+2.  npm install tailwindcss  =>  for install tailwind through npm
+
+3. npm install autoprefixer =>  All Browser based vendor will support this css
+
+4.  create two folder name public, src
+
+5 . In public folder create Index.html, and in src create tailwind.css
+
+6. in tailwind.css file write :-
+
+@tailwind base;
+@tailwind components;
+
+/* write custome css */
+
+@tailwind utilities;
+
+7. in package.json file where in srcipt tag write this :-
+    "build": "tailwindcss build ./src/tailwind.css -o ./public/tailwind.css"
+
+    
+
+8.  # npm install win-node-env      => for delelte  unnecccessary files in tailwnd, this one has 3 Steps
+
+
+    1. in srcipt you hae to write
+        "prod": "NODE_ENV=production npx tailwindcss build ./src/tailwind.css -o ./public/tailwind.css "
+
+    2. Then have to configure tailfind file to runthis code
+        # npx tailwindcss init    
+
+    3.   purge: [
+            './public/**/*.html'
+        ],
+    4. then have to run prod code which was given in 1 step("Below srcipt")  
+
+        # npm run prodcd  
+
